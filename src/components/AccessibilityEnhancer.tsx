@@ -31,7 +31,9 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
     skipNav.textContent = 'Skip to main content';
     skipNav.className = 'sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg';
     
-    document.body.insertBefore(skipNav, document.body.firstChild);
+    if (document.body) {
+      document.body.insertBefore(skipNav, document.body.firstChild);
+    }
   };
 
   const enhanceFocusManagement = () => {
@@ -67,7 +69,9 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
         white-space: normal;
       }
     `;
-    document.head.appendChild(style);
+    if (document.head) {
+      document.head.appendChild(style);
+    }
 
     // Add focus-enhanced class to interactive elements
     const interactiveElements = document.querySelectorAll('button, a, input, textarea, select');
@@ -143,7 +147,9 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
       liveRegion.setAttribute('aria-live', 'polite');
       liveRegion.setAttribute('aria-atomic', 'true');
       liveRegion.className = 'sr-only';
-      document.body.appendChild(liveRegion);
+      if (document.body) {
+        document.body.appendChild(liveRegion);
+      }
     }
 
     // Add form submission announcements

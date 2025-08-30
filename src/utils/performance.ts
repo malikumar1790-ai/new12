@@ -72,7 +72,9 @@ export class ResourcePreloader {
     link.type = 'font/woff2';
     link.crossOrigin = 'anonymous';
     link.href = fontUrl;
-    document.head.appendChild(link);
+    if (document.head) {
+      document.head.appendChild(link);
+    }
     
     this.preloadedResources.add(fontUrl);
   }
@@ -89,7 +91,9 @@ export class ResourcePreloader {
     link.onload = () => {
       link.rel = 'stylesheet';
     };
-    document.head.appendChild(link);
+    if (document.head) {
+      document.head.appendChild(link);
+    }
     
     this.preloadedResources.add(cssUrl);
   }
@@ -112,7 +116,9 @@ export class CriticalCSSManager {
     const style = document.createElement('style');
     style.id = 'critical-css';
     style.textContent = this.criticalCSS;
-    document.head.insertBefore(style, document.head.firstChild);
+    if (document.head) {
+      document.head.insertBefore(style, document.head.firstChild);
+    }
   }
 
   removeCriticalCSS() {
@@ -233,7 +239,9 @@ export class WebVitalsOptimizer {
     link.type = 'font/woff2';
     link.crossOrigin = 'anonymous';
     link.href = url;
-    document.head.appendChild(link);
+    if (document.head) {
+      document.head.appendChild(link);
+    }
   }
 
   disconnect() {

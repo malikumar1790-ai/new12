@@ -190,7 +190,9 @@ export class SecurityManager {
         const element = document.createElement('meta');
         element.setAttribute('name', meta.name);
         element.setAttribute('content', meta.content);
-        document.head.appendChild(element);
+        if (document.head) {
+          document.head.appendChild(element);
+        }
       }
     });
   }

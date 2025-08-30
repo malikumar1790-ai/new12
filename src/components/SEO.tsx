@@ -62,7 +62,9 @@ const SEO: React.FC<SEOProps> = ({
       element = document.createElement('meta');
       element.setAttribute(attribute, name);
       element.setAttribute('content', content);
-      document.head.appendChild(element);
+      if (document.head) {
+        document.head.appendChild(element);
+      }
     }
   };
 
@@ -75,7 +77,9 @@ const SEO: React.FC<SEOProps> = ({
       canonical = document.createElement('link');
       canonical.setAttribute('rel', 'canonical');
       canonical.setAttribute('href', url);
-      document.head.appendChild(canonical);
+      if (document.head) {
+        document.head.appendChild(canonical);
+      }
     }
   };
 
@@ -87,7 +91,9 @@ const SEO: React.FC<SEOProps> = ({
       const script = document.createElement('script');
       script.type = 'application/ld+json';
       script.textContent = JSON.stringify(data);
-      document.head.appendChild(script);
+      if (document.head) {
+        document.head.appendChild(script);
+      }
     }
   };
 

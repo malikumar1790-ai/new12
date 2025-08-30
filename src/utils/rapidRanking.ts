@@ -98,7 +98,9 @@ export const injectRichSnippets = () => {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
+    if (document.head) {
+      document.head.appendChild(script);
+    }
   });
 };
 
@@ -117,7 +119,9 @@ export const boostSocialSignals = () => {
     if (meta.property) element.setAttribute('property', meta.property);
     if (meta.name) element.setAttribute('name', meta.name);
     element.setAttribute('content', meta.content);
-    document.head.appendChild(element);
+    if (document.head) {
+      document.head.appendChild(element);
+    }
   });
 };
 
@@ -158,7 +162,9 @@ export const addLocalSEOSignals = () => {
   const script = document.createElement('script');
   script.type = 'application/ld+json';
   script.textContent = JSON.stringify(localSchema);
-  document.head.appendChild(script);
+  if (document.head) {
+    document.head.appendChild(script);
+  }
 };
 
 // 6. Mobile-first optimization signals
@@ -177,7 +183,9 @@ export const optimizeMobileSignals = () => {
     const element = document.createElement('meta');
     element.setAttribute('name', meta.name);
     element.setAttribute('content', meta.content);
-    document.head.appendChild(element);
+    if (document.head) {
+      document.head.appendChild(element);
+    }
   });
 };
 
@@ -199,7 +207,9 @@ export const addSpeedOptimizationHints = () => {
     link.setAttribute('href', hint.href);
     if (hint.as) link.setAttribute('as', hint.as);
     if (hint.rel === 'preconnect') link.setAttribute('crossorigin', '');
-    document.head.appendChild(link);
+    if (document.head) {
+      document.head.appendChild(link);
+    }
   });
 };
 
@@ -218,7 +228,9 @@ export const addContentFreshnessSignals = () => {
     const element = document.createElement('meta');
     element.setAttribute('name', meta.name);
     element.setAttribute('content', meta.content);
-    document.head.appendChild(element);
+    if (document.head) {
+      document.head.appendChild(element);
+    }
   });
 };
 

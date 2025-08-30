@@ -148,7 +148,7 @@ const ProfessionalChatbot: React.FC = () => {
       setIsTyping(false);
 
       // Text-to-speech for bot responses
-      if (isSpeaking && 'speechSynthesis' in window) {
+      if (isSpeaking && typeof window !== 'undefined' && 'speechSynthesis' in window) {
         const utterance = new SpeechSynthesisUtterance(botResponse.content);
         utterance.lang = language === 'en' ? 'en-US' : language === 'es' ? 'es-ES' : language === 'fr' ? 'fr-FR' : 'de-DE';
         speechSynthesis.speak(utterance);
@@ -164,7 +164,7 @@ const ProfessionalChatbot: React.FC = () => {
   };
 
   const toggleVoiceRecognition = () => {
-    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+    if (typeof window !== 'undefined' && ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
       const SpeechRecognition = (window as any).webkitSpeechRecognition || (window as any).SpeechRecognition;
       const recognition = new SpeechRecognition();
       
@@ -198,7 +198,7 @@ const ProfessionalChatbot: React.FC = () => {
 
   const toggleTextToSpeech = () => {
     setIsSpeaking(!isSpeaking);
-    if (isSpeaking && 'speechSynthesis' in window) {
+    if (isSpeaking && typeof window !== 'undefined' && 'speechSynthesis' in window) {
       speechSynthesis.cancel();
     }
   };

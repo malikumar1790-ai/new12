@@ -83,7 +83,7 @@ const Header: React.FC = () => {
           <Link to="/" className="flex items-center group flex-shrink-0" aria-label="Nexariza AI - Home">
             <div className="flex items-center space-x-3">
               <img
-                src="/assets/logos/nexariza-logo.png"
+                src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=64&h=64&fit=crop"
                 alt="Nexariza AI Logo"
                 className="w-10 h-10 object-contain rounded-xl group-hover:scale-105 transition-all duration-300"
                 loading="eager"
