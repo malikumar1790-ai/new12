@@ -497,7 +497,7 @@ const Contact: React.FC = () => {
                   
                   <div className="mt-6 text-center">
                     <p className="text-blue-200 text-sm">
-                      🌐 <strong>Visit us:</strong> <a href="https://www.nexariza.com" className="text-blue-300 hover:text-blue-200 underline">www.nexariza.com</a>
+                      🌐 <strong>Visit us:</strong> <a href="https://www.nexariza.com" className=\"text-blue-300 hover:text-blue-200 underline">www.nexariza.com</a>
                     </p>
                     <p className="text-blue-200 text-sm mt-2">
                       📧 <strong>Direct email:</strong> <a href="mailto:contact@nexariza.com" className="text-blue-300 hover:text-blue-200 underline">contact@nexariza.com</a>
